@@ -2,8 +2,7 @@ Vagrant.configure("2") do |config|
   
   config.vm.define "web1" do |web1|
     web1.vm.hostname = "web1"
-    web1.vm.box = "olbat/tiny-core-micro"
-    web1.vm.box_version = "0.1.0"
+    web1.vm.box = "ubuntu/xenial64"
     web1.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "512"]
       vb.customize ["modifyvm", :id, "--cpus", "1"]
@@ -57,8 +56,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "web2" do |web2|
     web2.vm.hostname = "web2"
-    web2.vm.box = "olbat/tiny-core-micro"
-    web2.vm.box_version = "0.1.0"
+    web2.vm.box = "ubuntu/xenial64"
     web2.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "512"]
       vb.customize ["modifyvm", :id, "--cpus", "1"]
