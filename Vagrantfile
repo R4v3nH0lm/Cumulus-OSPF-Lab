@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
     end
     web1.vm.hostname = "web1"
     #web1.vm.network "private_network", virtualbox__intnet: "swp1"
-    web1.vm.network "private_network", virtualbox__intnet: "swp2", ip: "10.0.0.2"
+    web1.vm.network "private_network", virtualbox__intnet: "swp2", ip: "10.10.10.2"
     #web1.vm.network "private_network", virtualbox__intnet: "swp3"
     #web1.vm.network "private_network", virtualbox__intnet: "swp4"
     web1.vm.provision "shell", path: "nginx_install.sh"
@@ -57,7 +57,7 @@ Vagrant.configure("2") do |config|
     web2.vm.hostname = "web2"
     # web2.vm.network "private_network", virtualbox__intnet: "swp1"
     # web2.vm.network "private_network", virtualbox__intnet: "swp2"
-    web2.vm.network "private_network", virtualbox__intnet: "swp3", ip: "10.10.10.2"
+    web2.vm.network "private_network", virtualbox__intnet: "swp3", ip: "10.20.20.2"
     # web2.vm.network "private_network", virtualbox__intnet: "swp4"
     web2.vm.provision "shell", path: "nginx_install.sh"
   end
