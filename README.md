@@ -12,8 +12,9 @@ Download and install:
 
 #### Vagrant
 This will require the following vagrant boxes be available on your system:
-- CumulusCommunity/cumulus-vx version 3.5.3
+- CumulusCommunity/cumulus-vx version 3.1.2
 - olbat/tiny-core-micro version 0.1.0
+- vEOS-lab-4.17.3F version 0 (https://eos.arista.com/using-veos-with-vagrant-and-virtualbox/)
 
 #### VirtualBox
 Provider/hypervisor to run the vagrant controlled VM's.

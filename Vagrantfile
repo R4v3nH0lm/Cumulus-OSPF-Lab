@@ -1,9 +1,18 @@
 Vagrant.configure("2") do |config|
   
+  config.vm.define "spine1" do |spine1|
+    spine1.vm.hostname = "spine1"
+    spine1.vm.box = "vEOS-lab-4.17.3F"
+    spine1.vm.network "private_network", virtualbox__intnet: "swp1"
+    spine1.vm.network "private_network", virtualbox__intnet: "swp2"
+    #spine1.vm.network "private_network", virtualbox__intnet: "swp3"
+    #spine1.vm.network "private_network", virtualbox__intnet: "swp4"
+  end
+  
   config.vm.define "leaf1" do |leaf1|
     leaf1.vm.hostname = "leaf1"
     leaf1.vm.box = "CumulusCommunity/cumulus-vx"
-    leaf1.vm.box_version = "3.5.3"
+    leaf1.vm.box_version = "3.1.2"
     leaf1.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "512"]
       vb.customize ["modifyvm", :id, "--cpus", "1"]
@@ -18,7 +27,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "leaf2" do |leaf2|
     leaf2.vm.hostname = "leaf2"
     leaf2.vm.box = "CumulusCommunity/cumulus-vx"
-    leaf2.vm.box_version = "3.5.3"
+    leaf2.vm.box_version = "3.1.2"
     leaf2.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "512"]
       vb.customize ["modifyvm", :id, "--cpus", "1"]
